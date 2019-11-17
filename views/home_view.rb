@@ -4,7 +4,7 @@ class HomeView < ApplicationView
   def index
     header
     body do
-      line('Welcome to NUS TECHNOLOGY RoR Training')
+      line('Welcome to MICROWEB')
       line
       line('Trainees:')
       # TODO: Place your code here

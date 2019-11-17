@@ -7,7 +7,7 @@ class Server
     show_instructions
     request = {}
     until request[:path] == 'quit'
-      print '[URL] https://www.nustechnology.com/'
+      print '[URL] https://www.microweb.com/'
       request = { path: gets.chomp }
       return if request[:path] == 'quit'
       routes(request)

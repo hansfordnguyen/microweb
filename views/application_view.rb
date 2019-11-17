@@ -10,7 +10,7 @@ class ApplicationView
 
   def header
     separator
-    puts '#' + 'NUS TECHNOLOGY'.center(PAGE_WIDTH - 2) + '#'
+    puts '#' + 'MICROWEB'.center(PAGE_WIDTH - 2) + '#'
     separator
     line
   end
