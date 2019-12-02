@@ -1,4 +1,4 @@
-require 'route'
+require 'routes'
 Dir[File.join(APP_ROOT, 'controllers/*.rb')].each { |controller| require controller }
 
 class Server
