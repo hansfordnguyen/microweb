@@ -12,4 +12,4 @@ require "#{APP_ROOT}/core/global_helpers"
 
 include GlobalHelpers
 
-application = Server.new.start
+Server.new.start
