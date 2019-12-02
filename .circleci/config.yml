@@ -1,0 +1,67 @@
+
+version: 2.1
+executors:
+  ruby263:
+    docker:
+      - image: circleci/ruby:2.6.3
+jobs:
+  build:
+    executor: ruby263
+    steps:
+      - restore_cache:
+          keys:
+            - microweb-source-{{ .Branch }}-{{ .Revision }}
+            - microweb-source-{{ .Branch }}
+            - microweb-source-
+      - checkout
+      - save_cache:
+          key: microweb-source-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - .git
+      - restore_cache:
+          keys:
+            - microweb-bundle-{{ checksum "Gemfile.lock" }}
+            - microweb-bundle-
+      - run:
+          name: Bundle Install
+          command: |
+            bundle check || bundle install
+      - save_cache:
+          key: microweb-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+  unit-test:
+    executor: ruby263
+    steps:
+      - restore_cache:
+          keys:
+            - microweb-source-{{ .Branch }}-{{ .Revision }}
+            - microweb-source-{{ .Branch }}
+            - microweb-source-
+      - checkout
+      - save_cache:
+          key: microweb-source-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - .git
+      - restore_cache:
+          keys:
+            - microweb-bundle-{{ checksum "Gemfile.lock" }}
+            - microweb-bundle-
+      - run:
+          name: Bundle Install
+          command: |
+            bundle check || bundle install
+      - save_cache:
+          key: microweb-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Rspec
+          command: bundle exec rspec
+workflows:
+  build-and-test:
+    jobs:
+      - build
+      - unit-test:
+          requires:
+            - build
