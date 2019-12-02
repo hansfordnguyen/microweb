@@ -1,4 +1,8 @@
 describe 'GlobalHelpers' do
+  describe '#titleize' do
+    it { expect(titleize('snake_case')).to eq 'SnakeCase' }
+  end
+
   describe '#underscore' do
     it { expect(underscore('camelCase')).to eq 'camel_case' }
   end

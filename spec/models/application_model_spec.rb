@@ -1,6 +1,8 @@
 require_relative '../../models/application_model'
 
 describe ApplicationModel do
+  APP_ROOT = 'APP_ROOT'
+
   class MyModel < ApplicationModel; end
 
   describe '.table_name' do
@@ -13,7 +15,6 @@ describe ApplicationModel do
     subject { MyModel.all }
 
     before do
-      APP_ROOT = 'APP_ROOT'
       allow(YAML).to receive(:load_file).and_return('raw data')
     end
 
