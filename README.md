@@ -1,2 +1,2 @@
 ### Mycroweb - MVC Simulator
-Run `ruby init.rb` to start the server.
+Run `make launch` to start browsing.
