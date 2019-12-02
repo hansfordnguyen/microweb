@@ -5,9 +5,6 @@ class HomeView < ApplicationView
     header
     body do
       line('Welcome to MICROWEB')
-      line
-      line('Trainees:')
-      # TODO: Place your code here
     end
     footer
   end

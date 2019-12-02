@@ -1,4 +1,3 @@
-require 'helpers'
 Dir[File.join(APP_ROOT, 'views/*.rb')].each { |view| require view }
 Dir[File.join(APP_ROOT, 'models/*.rb')].each { |model| require model }
 

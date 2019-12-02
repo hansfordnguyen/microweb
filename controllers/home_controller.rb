@@ -2,7 +2,7 @@ require 'application_controller'
 
 class HomeController < ApplicationController
   def index
-    render :index # TODO: Place your code here
+    render :index
   end
 
   def about
