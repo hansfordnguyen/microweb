@@ -1,4 +1,4 @@
-require 'application_view'
+require_relative 'application_view'
 
 class UsersView < ApplicationView
   def index

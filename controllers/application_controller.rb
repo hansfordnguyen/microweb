@@ -1,5 +1,5 @@
-Dir[File.join(APP_ROOT, 'views/*.rb')].each { |view| require view }
-Dir[File.join(APP_ROOT, 'models/*.rb')].each { |model| require model }
+Dir[File.join('.', 'views/*.rb')].each { |view| require view }
+Dir[File.join('.', 'models/*.rb')].each { |model| require model }
 
 class ApplicationController
   attr_reader :request, :controller, :action

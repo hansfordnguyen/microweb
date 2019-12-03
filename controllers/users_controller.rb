@@ -1,4 +1,4 @@
-require 'application_controller'
+require_relative 'application_controller'
 
 class UsersController < ApplicationController
   def index

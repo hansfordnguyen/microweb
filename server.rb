@@ -1,5 +1,8 @@
-require 'routes'
-Dir[File.join(APP_ROOT, 'controllers/*.rb')].each { |controller| require controller }
+require_relative './config/routes'
+
+Dir[File.join('.', 'controllers/*.rb')].each do |controller|
+  require controller
+end
 
 class Server
   def start

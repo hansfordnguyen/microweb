@@ -1,8 +1,6 @@
 require_relative '../../models/application_model'
 
 describe ApplicationModel do
-  APP_ROOT = 'APP_ROOT'
-
   class MyModel < ApplicationModel; end
 
   describe '.table_name' do
@@ -20,7 +18,7 @@ describe ApplicationModel do
 
     it 'loads correct data' do
       subject
-      expect(YAML).to have_received(:load_file).with('APP_ROOT/database/my_model.yml')
+      expect(YAML).to have_received(:load_file).with('./database/my_model.yml')
     end
 
     it { is_expected.to eq 'raw data' }

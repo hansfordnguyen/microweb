@@ -1,3 +1,3 @@
-require 'application_model'
+require_relative 'application_model'
 
 class User < ApplicationModel; end
