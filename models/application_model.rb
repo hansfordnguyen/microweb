@@ -6,6 +6,6 @@ class ApplicationModel
   end
 
   def self.all
-    YAML.load_file("#{APP_ROOT}/database/#{table_name}.yml")
+    YAML.load_file("./database/#{table_name}.yml")
   end
 end

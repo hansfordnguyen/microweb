@@ -1,5 +1,8 @@
-require 'routes'
-Dir[File.join(APP_ROOT, 'controllers/*.rb')].each { |controller| require controller }
+require_relative './config/routes'
+
+Dir[File.join('.', 'controllers/*.rb')].each do |controller|
+  require controller
+end
 
 class Server
   def start
@@ -28,5 +31,14 @@ class Server
       @action_name
     )
     controller.send @action_name
+  end
+
+  def show_instructions
+    puts 'Please enter the address you want to visit'
+    puts 'For examples: '
+    puts '  https://www.microweb.com/home'
+    puts '  https://www.microweb.com/about'
+    puts 'Type "quit" to exit the application'
+    puts
   end
 end

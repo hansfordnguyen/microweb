@@ -1,4 +1,4 @@
-require 'router'
+require_relative '../core/router'
 
 Router.draw do
   Router.get 'home', to: 'home#index'
