@@ -1,6 +1,6 @@
 require_relative '../../models/application_model'
 
-describe ApplicationModel do
+RSpec.describe ApplicationModel do
   class MyModel < ApplicationModel; end
 
   describe '.table_name' do

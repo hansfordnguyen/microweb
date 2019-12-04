@@ -1,4 +1,4 @@
-describe 'GlobalHelpers' do
+RSpec.describe 'GlobalHelpers' do
   describe '#titleize' do
     it { expect(titleize('snake_case')).to eq 'SnakeCase' }
   end
