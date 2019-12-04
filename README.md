@@ -1,2 +1,2 @@
-### Mycroweb - MVC Simulator
+### Microweb
 Run `make launch` to start browsing.
